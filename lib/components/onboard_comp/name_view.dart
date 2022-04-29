@@ -1,5 +1,7 @@
 import 'package:crewin_app/components/auth_comp/customtextfield.dart';
+import 'package:crewin_app/components/landing_comp/custom_cont.dart';
 import 'package:crewin_app/components/onboard_comp/enum/onboard_const.dart';
+import 'package:crewin_app/components/onboard_comp/sex_view.dart';
 import 'package:crewin_app/viewmodels/authview_model.dart';
 import 'package:flutter/material.dart';
 
@@ -35,11 +37,19 @@ class _NameViewState extends State<NameView> {
             controller: namecont,
             obsecureText: false,
             func: viewModel.addDataToMap(OnBoard.NAME, namecont.text),
+            validator: null,
           ),
           SizedBox(
             height: 40,
           ),
-          Text('Please Slide')
+          InkWell(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => SexView(
+                          name: viewModel.userData[OnBoard.NAME],
+                        )));
+              },
+              child: CustomContainer(text: 'Next', context: context, textSize: 25, height: 50, width: 150, c1: Theme.of(context).colorScheme.secondary))
         ]),
       ),
     );

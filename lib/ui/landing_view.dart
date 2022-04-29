@@ -1,6 +1,6 @@
 import 'package:crewin_app/components/landing_comp/custom_cont.dart';
+import 'package:crewin_app/components/onboard_comp/name_view.dart';
 import 'package:crewin_app/ui/auth_view.dart';
-import 'package:crewin_app/ui/onboardview.dart';
 import 'package:flutter/material.dart';
 
 class LandingView extends StatelessWidget {
@@ -26,7 +26,7 @@ class LandingView extends StatelessWidget {
               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => AuthView())),
               child: CustomContainer(text: 'Continue with e-mail', context: context, textSize: 14, height: 50, width: 220, c1: Theme.of(context).colorScheme.secondary)),
           InkWell(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => OnBoardView())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => NameView())),
               child: CustomContainer(text: 'Cont without signing up', context: context, textSize: 14, height: 50, width: 220, c1: Theme.of(context).colorScheme.secondary)),
         ]),
       ),

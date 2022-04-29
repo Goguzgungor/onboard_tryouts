@@ -1,11 +1,13 @@
 import 'package:crewin_app/components/landing_comp/custom_cont.dart';
+import 'package:crewin_app/components/onboard_comp/age_view.dart';
 import 'package:crewin_app/components/onboard_comp/enum/onboard_const.dart';
 import 'package:crewin_app/viewmodels/authview_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 class SexView extends StatefulWidget {
-  const SexView({Key? key}) : super(key: key);
+  final String name;
+  const SexView({Key? key, required this.name}) : super(key: key);
 
   @override
   State<SexView> createState() => _SexViewState();
@@ -56,6 +58,15 @@ class _SexViewState extends State<SexView> {
             SizedBox(
               height: 40,
             ),
+            InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => AgeView(
+                            name: widget.name,
+                            sex: viewModel.userData[OnBoard.SEX],
+                          )));
+                },
+                child: CustomContainer(text: 'Next', context: context, textSize: 25, height: 50, width: 150, c1: Theme.of(context).colorScheme.secondary))
           ],
         ),
       ),

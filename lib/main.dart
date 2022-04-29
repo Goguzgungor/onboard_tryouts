@@ -1,3 +1,4 @@
+import 'package:crewin_app/ui/auth_view.dart';
 import 'package:crewin_app/ui/landing_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';

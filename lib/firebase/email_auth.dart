@@ -11,6 +11,7 @@ class AuthMenager {
   AuthMenager._init();
   FirebaseAuth auth = FirebaseAuth.instance;
   Future<dynamic> register(String mail, String pass, String repass, BuildContext context) async {
+    
     // Kullanımı : AuthMenager.instance.login(mail, pass)
 
     if (pass != repass) {

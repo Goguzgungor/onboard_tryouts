@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -7,8 +6,9 @@ class CustomTextField extends StatelessWidget {
   final TextInputType type;
   final TextEditingController controller;
   final dynamic func;
+  final dynamic validator;
 
-  const CustomTextField({Key? key, required this.hintText, required this.type, required this.controller, required this.obsecureText, this.func}) : super(key: key);
+  const CustomTextField({Key? key, required this.hintText, required this.type, required this.controller, required this.obsecureText, this.func, required this.validator}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class CustomTextField extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Padding(
         padding: const EdgeInsets.all(17.0),
-        child: TextField(
+        child: TextFormField(
           obscureText: obsecureText,
           decoration: InputDecoration(
               hintText: hintText,
@@ -32,6 +32,7 @@ class CustomTextField extends StatelessWidget {
               )),
           keyboardType: type,
           controller: controller,
+          validator: validator,
           onChanged: (controller) {
             func;
           },
